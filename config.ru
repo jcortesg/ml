@@ -1,2 +1,2 @@
 require "./app"
-run Api
+run App
