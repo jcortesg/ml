@@ -10,10 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_02_040501) do
+ActiveRecord::Schema.define(version: 2021_06_02_075921) do
 
   create_table "dnas", force: :cascade do |t|
     t.string "sequence", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "stats", force: :cascade do |t|
+    t.integer "count_mutant_dna"
+    t.integer "count_human_dna"
+    t.float "ratio"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
