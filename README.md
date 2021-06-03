@@ -25,4 +25,7 @@ _Se asume que el equipo tiene intalado ruby > 2.5_
 
 #### Code coverage
 
+
+`open coverage/index.html`
+
 `Coverage report generated for RSpec to x-men/coverage. 120 / 129 LOC (93.02%) covered.`

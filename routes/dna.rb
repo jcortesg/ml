@@ -15,15 +15,11 @@ module Xmen
           stat = Stat.last
           if stat 
             {
-              count_mutant_dna: stat.count_mutant_dna,
-              count_human_dna: stat.count_human_dna,
-              ratio: stat.ratio
+              count_mutant_dna: stat.count_mutant_dna, count_human_dna: stat.count_human_dna, ratio: stat.ratio
             }.to_json
           else
             {
-              count_mutant_dna: 0,
-              count_human_dna: 0,
-              ratio: 0.0
+              count_mutant_dna: 0, count_human_dna: 0, ratio: 0.0
             }.to_json
           end
         end
