@@ -8,6 +8,7 @@ gem 'sinatra-activerecord'
 gem 'sqlite3'
 gem 'rake'
 gem 'simplecov'
+gem 'puma'
 
 group :development do
   gem "pry"

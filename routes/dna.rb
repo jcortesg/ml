@@ -2,16 +2,16 @@ module Xmen
   module Routes
     def self.included app
       app.class_eval do
-        get '/' do
+        get '/ml' do
           json :message => "Welcome! X-men"
         end
-        post '/mutant' do
+        post '/ml/mutant' do
           params =  JSON.parse request.body.read
           dna = Dna.new(dna_sequence: params["dna"])
           dna.isMutand? ?  status(200) :  status(403)
         end
 
-        get '/stats' do
+        get '/ml/stats' do
           stat = Stat.last
           if stat 
             {
