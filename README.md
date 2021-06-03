@@ -3,11 +3,11 @@
 ### Intalación
 _Se asume que el equipo tiene intalado ruby > 2.5_
 
-##### Intalación de dependencias
+#### Intalación de dependencias
 
 `bundle exec bundle install`
 
-##### Creación de bases de datos
+#### Creación de bases de datos
 
 `RACK_ENV=development bundle exec rake db:create`
 `RACK_ENV=development bundle exec rake db:migrate`
@@ -15,11 +15,14 @@ _Se asume que el equipo tiene intalado ruby > 2.5_
 `RACK_ENV=test bundle exec rake db:create`
 `RACK_ENV=test bundle exec rake db:migrate`
 
-##### Iniciar servidor
+#### Iniciar servidor
 
 `RACK_ENV=development rackup config.ru`
 
-##### Pruebas
+#### Pruebas
 
 `rspec specs`
 
+#### Code coverage
+
+`Coverage report generated for RSpec to x-men/coverage. 120 / 129 LOC (93.02%) covered.`

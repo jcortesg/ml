@@ -19,9 +19,9 @@ ActiveRecord::Schema.define(version: 2021_06_02_075921) do
   end
 
   create_table "stats", force: :cascade do |t|
-    t.integer "count_mutant_dna"
-    t.integer "count_human_dna"
-    t.float "ratio"
+    t.integer "count_mutant_dna", default: 0
+    t.integer "count_human_dna", default: 0
+    t.float "ratio", default: 0.0
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

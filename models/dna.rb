@@ -1,13 +1,32 @@
 class Dna < ActiveRecord::Base 
  attr_accessor :dna_sequence
   
-  validates :sequence, presence: true
+  validates :sequence, 
+    presence: true,
+    uniqueness: true
+
+  validates_format_of :sequence, with: /\A(((?:[ATGC])(?!.*\s))+)\z/i
+  before_validation :setSequesce
 
   MUTAND_SEQUENCE = %w(AAAA TTTT CCCC GGGG )
 
+  def setSequesce 
+    self.sequence = self.dna_sequence.join
+  end
+
   def isMutand?
     values = MUTAND_SEQUENCE.map {|string| self.search(string)}
-    values.inject(:+) > 1 ? true : false
+    isMutand = values.inject(:+) > 1 ? true : false
+    stats = Stat.last || Stat.create_initial
+
+    if self.save
+      stats.add_record(isMutand)
+    else
+      puts "···Error...."
+      puts self.errors.inspect
+    end
+
+    isMutand
   end
 
   def search(string)
